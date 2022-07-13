@@ -1,5 +1,4 @@
-﻿using Aula_28.Controllers;
-namespace Aula_28.Models
+﻿namespace Razor_aula_28.Models
 {
     public class Boletim
     {
@@ -9,6 +8,5 @@ namespace Aula_28.Models
         public double Nota3 { get; set; }
         public double Nota4 { get; set; }
         public string Status { get; set; }
-
     }
 }

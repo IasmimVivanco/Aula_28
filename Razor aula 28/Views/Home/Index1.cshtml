@@ -1,0 +1,86 @@
+﻿@model List<Boletim>;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row mb-3">
+    <div class="col">
+        <h1 class="h1">#1 Willian Santana </h1>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Matéria</th>
+            <th scope="col">1º</th>
+            <th scope="col">2º</th>
+            <th scope="col">3º</th>
+            <th scope="col">4º</th>
+            <th scope="col">Status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var boletim in Model)
+        {
+            <tr>
+                <th scope="row">@boletim.Materia</th>
+                @if (@boletim.Nota1 < 6)
+                {
+                    <th  scope="col" class="table-danger">@boletim.Nota1</th>
+                }
+                else if (@boletim.Nota1 >= 6 && boletim.Nota1 < 7)
+                {
+                    <th  scope="col" class="table-warning">@boletim.Nota1</th>
+                }
+                else
+                {
+                    <th  scope="col" class="table">@boletim.Nota1</th>
+                }
+                @if (@boletim.Nota2 < 6)
+                {
+                    <th  scope="col" class="table-danger">@boletim.Nota2</th>
+                }
+                else if (@boletim.Nota2 >= 6 && boletim.Nota2 < 7)
+                {
+                    <th  scope="col" class="table-warning">@boletim.Nota2</th>
+                }
+                else
+                {
+                    <th  scope="col" class="table">@boletim.Nota2</th>
+                }
+                @if (@boletim.Nota3 < 6)
+                {
+                    <th scope="col" class="table-danger">@boletim.Nota3</th>
+                }
+                else if (@boletim.Nota3 >= 6 && boletim.Nota3 < 7)
+                {
+                    <th scope="col" class="table-warning">@boletim.Nota3</th>
+                }
+                else
+                {
+                    <th scope="col" class="table">@boletim.Nota3</th>
+                }
+                @if (@boletim.Nota4 < 6)
+                {
+                    <th scope="col" class="table-danger">@boletim.Nota4</th>
+                }
+                else if (@boletim.Nota4 >= 6 && boletim.Nota4 < 7)
+                {
+                    <th scope="col" class="table-warning">@boletim.Nota4</th>
+                }
+                else
+                {
+                    <th scope="col" class="table">@boletim.Nota4</th>
+                }
+                @if (@boletim.Status == "Aprovado"){
+                    <th scope="col" class="table">@boletim.Status</th>
+                }
+                else{
+                     <th scope="col" class="table-danger">@boletim.Status</th>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

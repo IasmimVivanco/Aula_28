@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using Aula_28.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Razor_aula_28.Models;
 using System.Diagnostics;
 
-namespace Aula_28.Controllers
+namespace Razor_aula_28.Controllers
 {
     public class HomeController : Controller
     {
@@ -21,7 +20,6 @@ namespace Aula_28.Controllers
             Alunos.Add(new Aluno() { Id = 2, Name = "Thiago", Sobrenome = "Machado", Status = "Aprovado" });
             Alunos.Add(new Aluno() { Id = 3, Name = "Rodrigo", Sobrenome = "Braga", Status = "Aprovado" });
             Alunos.Add(new Aluno() { Id = 4, Name = "Caroline", Sobrenome = "da Silva", Status = "Recuperação" });
-
             return View(Alunos);
         }
         public IActionResult Index1()
@@ -31,6 +29,7 @@ namespace Aula_28.Controllers
             boletim.Add(new Boletim() { Materia = "Matemática", Nota1 = 10, Nota2 = 8, Nota3 = 8, Nota4 = 8, Status = "Aprovado" });
             boletim.Add(new Boletim() { Materia = "Ciências", Nota1 = 6, Nota2 = 7.5, Nota3 = 8, Nota4 = 8, Status = "Aprovado" });
             boletim.Add(new Boletim() { Materia = "História", Nota1 = 8, Nota2 = 9, Nota3 = 10, Nota4 = 7.5, Status = "Aprovado" });
+
             return View(boletim);
         }
         public IActionResult Privacy()

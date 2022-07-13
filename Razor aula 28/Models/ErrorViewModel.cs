@@ -1,4 +1,4 @@
-namespace Aula_28.Models
+namespace Razor_aula_28.Models
 {
     public class ErrorViewModel
     {
