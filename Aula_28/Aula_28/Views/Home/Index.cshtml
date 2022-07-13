@@ -1,0 +1,67 @@
+﻿@model List<Aluno>;
+@{
+    ViewData["Title"] = "App Escola";
+}
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col">
+            <h1 class="h1"># Primeira Turma</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input 
+                class="form-control form-control-lg" 
+                type="text" 
+                placeholder="Digite o nome do aluno..." 
+                aria-label="Digite o nome do aluno..."
+            />
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-lg btn-primary">
+                <img src="img/searchIcon.png">
+            </button>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var aluno in Model){
+    <tr>
+       @if(@aluno.Status == "Reprovado"){
+           <tr class="table-danger">
+           <th scope="row" >@aluno.Id</th> 
+           <td>@aluno.Name</td>
+           <td>@aluno.Sobrenome</td>
+           <td>@aluno.Status</td> 
+           </tr>         
+       }
+       else if(@aluno.Status == "Recuperação"){
+           <tr class="table-warning">
+           <th scope="row">@aluno.Id</th>
+           <td>@aluno.Name</td>
+           <td>@aluno.Sobrenome</td>
+           <td>@aluno.Status</td> 
+           </tr>   
+       }
+       else{
+            <th scope="row">@aluno.Id</th> 
+            <td>@aluno.Name</td>
+            <td>@aluno.Sobrenome</td>
+            <td>@aluno.Status</td>        
+       }     
+    </tr>
+    }
+  </tbody>
+  </table>
+
