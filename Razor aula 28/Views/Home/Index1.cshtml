@@ -4,20 +4,31 @@
 *@
 @{
 }
+
 <div class="row mb-3">
     <div class="col">
-        <h1 class="h1">#1 Willian Santana </h1>
+        <h1 class="h1">#1 Willian Sant ana </h1>
     </div>
 </div>
+<div class="row mb-5">
+    <div class="col-auto">
+        <h4 class="h4">31/08/90</h4>
+    </div>
+    <div class="col">
+        <h4 class="text-secondary">(32 Anos)</h4>
+    </div>
+    <h4 class="h4">Rua Tribal, 68 - Recreio dos Bandeirantes, Rio de Janeiro</h4>
+</div>
+
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Matéria</th>
-            <th scope="col">1º</th>
-            <th scope="col">2º</th>
-            <th scope="col">3º</th>
-            <th scope="col">4º</th>
-            <th scope="col">Status</th>
+            <th class="row">Matéria</th>
+            <td class="col">1º</td>
+            <td class="col">2º</td>
+            <td class="col">3º</td>
+            <td class="col">4º</td>
+            <td class="col">Status</td>
 
         </tr>
     </thead>
@@ -25,60 +36,60 @@
         @foreach (var boletim in Model)
         {
             <tr>
-                <th scope="row">@boletim.Materia</th>
+                <th class="row">@boletim.Materia</th>
                 @if (@boletim.Nota1 < 6)
                 {
-                    <th  scope="col" class="table-danger">@boletim.Nota1</th>
+                    <td class="table-danger">@boletim.Nota1.ToString(boletim.Culture)</td>
                 }
                 else if (@boletim.Nota1 >= 6 && boletim.Nota1 < 7)
                 {
-                    <th  scope="col" class="table-warning">@boletim.Nota1</th>
+                    <td class="table-warning">@boletim.Nota1.ToString(boletim.Culture)</td>
                 }
                 else
                 {
-                    <th  scope="col" class="table">@boletim.Nota1</th>
+                    <td class="table-success">@boletim.Nota1.ToString(boletim.Culture)</td>
                 }
                 @if (@boletim.Nota2 < 6)
                 {
-                    <th  scope="col" class="table-danger">@boletim.Nota2</th>
+                    <td class="table-danger">@boletim.Nota2.ToString(boletim.Culture)</td>
                 }
                 else if (@boletim.Nota2 >= 6 && boletim.Nota2 < 7)
                 {
-                    <th  scope="col" class="table-warning">@boletim.Nota2</th>
+                    <td class="table-warning">@boletim.Nota2.ToString(boletim.Culture)</td>
                 }
                 else
                 {
-                    <th  scope="col" class="table">@boletim.Nota2</th>
+                    <td class="table-success">@boletim.Nota2.ToString(boletim.Culture)</td>
                 }
                 @if (@boletim.Nota3 < 6)
                 {
-                    <th scope="col" class="table-danger">@boletim.Nota3</th>
+                    <td class="table-danger">@boletim.Nota3.ToString(boletim.Culture)</td>
                 }
                 else if (@boletim.Nota3 >= 6 && boletim.Nota3 < 7)
                 {
-                    <th scope="col" class="table-warning">@boletim.Nota3</th>
+                    <td class="table-warning">@boletim.Nota3.ToString(boletim.Culture)</td>
                 }
                 else
                 {
-                    <th scope="col" class="table">@boletim.Nota3</th>
+                    <td class="table-success">@boletim.Nota3.ToString(boletim.Culture)</td>
                 }
                 @if (@boletim.Nota4 < 6)
                 {
-                    <th scope="col" class="table-danger">@boletim.Nota4</th>
+                    <td class="table-danger">@boletim.Nota4.ToString(boletim.Culture)</td>
                 }
                 else if (@boletim.Nota4 >= 6 && boletim.Nota4 < 7)
                 {
-                    <th scope="col" class="table-warning">@boletim.Nota4</th>
+                    <td class="table-warning">@boletim.Nota4.ToString(boletim.Culture)</td>
                 }
                 else
                 {
-                    <th scope="col" class="table">@boletim.Nota4</th>
+                    <td class="table-success">@boletim.Nota4.ToString(boletim.Culture)</td>
                 }
                 @if (@boletim.Status == "Aprovado"){
-                    <th scope="col" class="table">@boletim.Status</th>
+                    <td class="table-success">@boletim.Status</td>
                 }
                 else{
-                     <th scope="col" class="table-danger">@boletim.Status</th>
+                     <td class="table-danger">@boletim.Status</td>
                 }
             </tr>
         }

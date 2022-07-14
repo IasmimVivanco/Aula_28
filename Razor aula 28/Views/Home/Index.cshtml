@@ -1,6 +1,15 @@
 ﻿@model List<Aluno>;
 @{
+    ViewData["img"] = "/imagens/R.png";
     ViewData["Title"] = "App Escola";
+      <div class="row mb-5">
+        <div class="col-auto">
+         <img src="/imagens/R.png" class="img-fluid" style="width:60px">
+        </div>
+        <div class="col">
+           <h1 class="h1">APP ESCOLA</h1>
+        </div>
+    </div>
 }
 
 <div class="container">
@@ -9,7 +18,7 @@
             <h1 class="h1"># Primeira Turma</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col">
             <input 
                 class="form-control form-control-lg" 
@@ -20,7 +29,7 @@
         </div>
         <div class="col-auto">
             <button class="btn btn-lg btn-primary">
-                <img src="img/searchIcon.png">
+                <img src="/imagens/716899d4a15ad03f139f16e7606df47f-removebg-preview.png" class="img-fluid" style="width:20px"></">
             </button>
         </div>
     </div>
